@@ -1,6 +1,10 @@
 # 将微信读书划线和笔记同步到Notion
 
 
+
+
+![smithery badge](https://smithery.ai/badge/@EarmorVincent/weread2notion)](https://smithery.ai/server/@EarmorVincent/weread2notion)
+
 本项目通过Github Action每天定时同步微信读书划线到Notion。
 
 预览效果：https://book.malinkang.com
@@ -66,5 +70,6 @@
 ## 微信群
 
  ![image](./asset/10.jpg)
+
 
 

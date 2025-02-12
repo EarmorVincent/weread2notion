@@ -1,0 +1,25 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - wereadCookie
+      - notionToken
+      - notionDatabaseId
+    properties:
+      wereadCookie:
+        type: string
+        description: Cookie for accessing WeRead
+      notionToken:
+        type: string
+        description: Token for accessing Notion
+      notionDatabaseId:
+        type: string
+        description: ID of the Notion database
+  commandFunction:
+    # A function that produces the CLI command to start the MCP on stdio.
+    |-
+    (config) => ({command: 'python', args: ['weread.py'], env: {WEREAD_COOKIE: config.wereadCookie, NOTION_TOKEN: config.notionToken, NOTION_DATABASE_ID: config.notionDatabaseId}})
